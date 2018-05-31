@@ -1,17 +1,15 @@
 import React, { Component } from 'react';
-import '../styles/App.css';
+import Note from '../components/Note';
+import '../styles/app.css';
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={`${process.env.PUBLIC_URL}/logo.svg`} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+      <div className="sticky-app">
+        <header className="sticky-header">ABC Sticky</header>
+        <main className="sticky-body">
+          <Note text="testing"></Note>
+        </main>
       </div>
     );
   }
