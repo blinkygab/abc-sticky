@@ -31,6 +31,7 @@
     align-items: center;
     backface-visibility: hidden;
     transition: all 1s;
+    z-index: 1;
 
     .flip &{
       transform: rotateY(180deg);
@@ -38,14 +39,11 @@
   }
 
   &--back {
-    display: none;
     content: '';
     background: blue;
     transform: rotateY(-180deg);
-    
-    .enable-back &{
-      display: block;
-    }
+    z-index: 0;
+
     .flip &{
       transform: rotateY(0);
     }
@@ -55,17 +53,5 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%) scale(3) !important; 
-  }
-}
-
-.note-editor {
-  position: fixed;
-  bottom: 0;
-  right: 0;
-  background: red;
-  padding: 25px;
-
-  > * {
-    display: block;
   }
 }

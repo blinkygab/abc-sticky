@@ -4,15 +4,30 @@ export const addNote = (text) => ({
   text
 });
 
-export const updateNote = (id, text) => ({
-  type: 'UPDATE_NOTE',
-  id,
-  text
-});
+export const touchNote = (id) => (dispatch, getState) => {
+  const state = getState();
+  const { zIndex } = state.app;
+  dispatch({
+    type: 'TOUCH_NOTE',
+    id,
+    z: zIndex
+  })
+};
 
-export const moveNote = (id, x, y) => ({
-  type: 'MOVE_NOTE',
-  id,
-  x,
-  y
-});
+export const moveNote = (id, x, y) => (dispatch) => {
+  dispatch(touchNote(id));
+  dispatch({
+    type: 'MOVE_NOTE',
+    id,
+    x,
+    y
+  })
+};
+
+export const flipNote = (id) => (dispatch) => {
+  dispatch(touchNote(id));
+  dispatch({
+    type: 'FLIP_NOTE',
+    id  
+  });  
+}
