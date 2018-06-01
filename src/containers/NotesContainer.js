@@ -3,11 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import Note from '../components/Note';
 
-class NotesContainer extends React.Component {  
-  constructor(props) {
-    super(props);
-  }
-
+class NotesContainer extends React.Component {
   render() {
     const { notes } = this.props;
 
@@ -32,6 +28,8 @@ NotesContainer.propTypes = {
       text: PropTypes.string.isRequired,
       x: PropTypes.number.isRequired,
       y: PropTypes.number.isRequired,
+      z: PropTypes.number.isRequired,
+      flipped: PropTypes.bool.isRequired,
     }).isRequired
   ).isRequired
 }

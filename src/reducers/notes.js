@@ -45,7 +45,7 @@ const notes = (state = [], action) => {
           text: action.text,
           x: 0,
           y: 0,
-          z: state.zIndex,
+          z: 9999,
           flipped: false
         }
       ]
@@ -55,7 +55,7 @@ const notes = (state = [], action) => {
     case 'TOUCH_NOTE':
       let tempState = state.slice();
       tempState.forEach((note) => {
-        if (note.id == action.id) {
+        if (note.id === action.id) {
           if (action.type === 'UPDATE_NOTE') {
             note.text = action.text;
           }

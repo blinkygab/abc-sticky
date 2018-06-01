@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import Note from '../components/Note';
 import { addNote } from '../actions/notes';
 import '../styles/editor.css';
 
@@ -23,6 +22,7 @@ class NoteEditor extends React.Component {
   }
 
   handleKeyDown(e) {
+    // handle ENTER KEY
     if (e.which === 13) {
       this.handleSubmit();
     }
@@ -41,6 +41,10 @@ class NoteEditor extends React.Component {
       </div>
     )
   }
+}
+
+NoteEditor.propTypes = {
+  dispatch: PropTypes.func.isRequired
 }
 
 export default connect()(NoteEditor);
