@@ -1,15 +1,14 @@
-import React, { Component } from 'react';
-import Note from '../components/Note';
+import React from 'react';
+import NotesContainer from '../containers/NotesContainer';
+import NoteEditor from '../containers/NoteEditor';
 import '../styles/app.css';
 
-class App extends Component {
+class App extends React.Component {
   render() {
     return (
       <div className="sticky-app">
-        <header className="sticky-header">ABC Sticky</header>
-        <main className="sticky-body">
-          <Note text="testing"></Note>
-        </main>
+        <NotesContainer />
+        <NoteEditor />
       </div>
     );
   }

@@ -1,14 +1,9 @@
 .sticky-app {
-  text-align: center;
-}
-
-.sticky-header {
-  position: fixed;
-  width: 100vw;
-  height: 50px;
-  background: rgba(0,0,0,0.1);
 }
 
 .sticky-body {
-
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0;
 }
